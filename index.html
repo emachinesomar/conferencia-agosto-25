@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción - Conferencia Bahá'í</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --color-primary-cream: #f8f6f0;
+            --color-secondary-beige: #e8e2d4;
+            --color-navy-blue: #1a365d;
+            --color-deep-navy: #153a5b;
+            --color-gold: #d4af37;
+            --color-light-gold: #f0e68c;
+            --color-white: #ffffff;
+            --color-gray-light: #f7fafc;
+            --color-gray-medium: #a0aec0;
+            --color-text-dark: #2d3748;
+            --color-text-light: #718096;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background: linear-gradient(135deg, var(--color-primary-cream) 0%, var(--color-secondary-beige) 100%);
+            overflow-x: hidden;
+        }
+        
+        .serif {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .sans-serif {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--color-navy-blue);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(26, 54, 93, 0.1);
+        }
+        
+        .hero-quote {
+            font-size: 1.3rem;
+            color: var(--color-text-light);
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .hero-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-light-gold) 100%);
+            color: var(--color-navy-blue);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .hero-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .star-container {
+            position: absolute;
+            top: 20%;
+            right: 15%;
+            z-index: 1;
+            opacity: 0.1;
+        }
+        
+        .nine-pointed-star {
+            width: 200px;
+            height: 200px;
+            animation: gentleRotate 20s linear infinite;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+        }
+        
+        .form-section {
+            padding: 4rem 2rem;
+            background: var(--color-white);
+            margin-top: -50px;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-title {
+            font-size: 2.5rem;
+            color: var(--color-navy-blue);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .form-group.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-navy-blue);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--color-secondary-beige);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--color-gray-light);
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+            background: var(--color-white);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+        
+        .custom-checkbox input {
+            opacity: 0;
+            position: absolute;
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            background: var(--color-gray-light);
+            border: 2px solid var(--color-secondary-beige);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-checkbox input:checked ~ .checkmark {
+            background: var(--color-gold);
+            border-color: var(--color-gold);
+        }
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 7px;
+            top: 3px;
+            width: 6px;
+            height: 12px;
+            border: solid var(--color-navy-blue);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--color-navy-blue) 0%, var(--color-deep-navy) 100%);
+            color: var(--color-white);
+            padding: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 54, 93, 0.3);
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .footer {
+            background: var(--color-navy-blue);
+            color: var(--color-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes gentleRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-quote {
+                font-size: 1.1rem;
+            }
+            
+            .star-container {
+                display: none;
+            }
+            
+            .form-title {
+                font-size: 2rem;
+            }
+            
+            .form-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title serif">Conferencia Bahá'í</h1>
+            <blockquote class="hero-quote serif">
+                "La diversidad en la familia humana debería ser la causa de amor y armonía, 
+                como ocurre en la música donde muchas notas diferentes se mezclan juntas 
+                en perfectos acordes."
+            </blockquote>
+            <a href="#formulario" class="hero-button sans-serif">Inscribirse Ahora</a>
+        </div>
+        
+        <div class="star-container">
+            <svg class="nine-pointed-star" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z" 
+                      fill="url(#goldGradient)" 
+                      stroke="var(--color-gold)" 
+                      stroke-width="2"/>
+                <defs>
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:var(--color-gold);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:var(--color-light-gold);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </section>
+
+    <section id="formulario" class="form-section">
+        <div class="form-container">
+            <h2 class="form-title serif">Formulario de Inscripción</h2>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Nombre Completo *</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="conference" class="form-label">Conferencia a la que asistirá *</label>
+                    <select id="conference" name="conference" class="form-select" required>
+                        <option value="">Seleccione una conferencia</option>
+                        <option value="unidad-diversidad">Unidad en la Diversidad</option>
+                        <option value="justicia-social">Justicia Social y Paz</option>
+                        <option value="espiritualidad-ciencia">Espiritualidad y Ciencia</option>
+                        <option value="educacion-transformacion">Educación y Transformación Social</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companions" class="form-label">¿Viene acompañado? (Niños/Parejas)</label>
+                    <textarea id="companions" name="companions" class="form-textarea" 
+                                placeholder="Indique si viene con niños, pareja u otros acompañantes. Incluya nombres y edades si es relevante."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="stayForMeal" name="stayForMeal">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="stayForMeal" class="form-label" style="margin-bottom: 0;">
+                            Confirmo que me quedaré a comer
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dietaryRestrictions" class="form-label">Alergias alimentarias o dietas especiales</label>
+                    <textarea id="dietaryRestrictions" name="dietaryRestrictions" class="form-textarea" 
+                                placeholder="Indique cualquier alergia alimentaria, restricción dietética o preferencia especial (vegetariano, vegano, sin gluten, etc.)"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contribution" class="form-label">Aportación (opcional)</label>
+                    <input type="number" id="contribution" name="contribution" class="form-input" 
+                                min="0" step="0.01" placeholder="0.00">
+                    <small style="color: var(--color-text-light); display: block; margin-top: 0.5rem;">
+                        Su aportación voluntaria ayuda a cubrir los gastos del evento.
+                    </small>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    Enviar Inscripción
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-text">
+            © 2025 Comunidad Bahá'í. Todos los derechos reservados.<br>
+            "La Tierra es un solo país y la humanidad sus ciudadanos"
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const submitButton = form.querySelector('.submit-button');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                if (!validateForm()) {
+                    return;
+                }
+
+                const formData = new FormData(form);
+                const params = new URLSearchParams();
+                for (const pair of formData.entries()) {
+                    params.append(pair[0], pair[1]);
+                }
+                const queryString = params.toString();
+
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+                
+                try {
+                    // *** ESTA ES LA URL QUE DEBES REEMPLAZAR ***
+                    // Cambia 'TU_URL_DE_APPS_SCRIPT' por la URL que obtuviste de Google Apps Script.
+                    const response = await fetch('https://script.google.com/macros/s/AKfycbz6MZC9Ey0Kub7Tonqn32xxJwEVgrPXwgCP75Tqv68ra0NXj9Fg3UQBeTFso-IoPnCQ/exec' + queryString, {
+                        method: 'GET'
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+                        showToast(result.message, 'success');
+                        form.reset();
+                        clearAllErrors();
+                    } else {
+                        showToast(result.message || 'Error al enviar la inscripción.', 'error');
+                    }
+                } catch (error) {
+                    showToast('Error de conexión. Intente de nuevo más tarde.', 'error');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Enviar Inscripción';
+                }
+            });
+
+            function validateForm() {
+                const requiredFields = ['fullName', 'email', 'conference'];
+                let isValid = true;
+                
+                requiredFields.forEach(fieldName => {
+                    const field = document.getElementById(fieldName);
+                    if (!field.value.trim()) {
+                        showFieldError(field, 'Este campo es requerido');
+                        isValid = false;
+                    } else {
+                        clearFieldError(field);
+                    }
+                });
+                
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email.value && !emailRegex.test(email.value)) {
+                    showFieldError(email, 'Ingrese un email válido');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            function showFieldError(field, message) {
+                clearFieldError(field);
+                field.style.borderColor = '#e53e3e';
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'field-error';
+                errorDiv.style.cssText = 'color: #e53e3e; font-size: 0.875rem; margin-top: 0.5rem;';
+                errorDiv.textContent = message;
+                field.parentNode.appendChild(errorDiv);
+            }
+            
+            function clearFieldError(field) {
+                field.style.borderColor = '';
+                const existingError = field.parentNode.querySelector('.field-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+            }
+            
+            function showToast(message, type) {
+                const toastDiv = document.createElement('div');
+                let bgColor = type === 'success' ? '#d4af37' : '#e53e3e';
+                let textColor = type === 'success' ? '#1a365d' : 'white';
+                
+                toastDiv.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: ${bgColor};
+                    color: ${textColor};
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                    opacity: 0;
+                    animation: fadeInOut 5s ease-out forwards;
+                    text-align: center;
+                `;
+                toastDiv.textContent = message;
+                document.body.appendChild(toastDiv);
+                
+                setTimeout(() => {
+                    toastDiv.remove();
+                }, 5000);
+            }
+            
+            function clearAllErrors() {
+                form.querySelectorAll('.field-error').forEach(error => error.remove());
+                form.querySelectorAll('input, select, textarea').forEach(field => {
+                    field.style.borderColor = '';
+                });
+            }
+
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.form-group').forEach(group => {
+                observer.observe(group);
+            });
+            
+            document.querySelector('.hero-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#formulario').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
