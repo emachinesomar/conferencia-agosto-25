@@ -67,16 +67,14 @@
         .hero-title {
             font-size: 3.5rem;
             font-weight: 600;
-            /* color: var(--color-navy-blue); */
-            color: #fbfdff;
+            color: var(--color-navy-blue);
             margin-bottom: 1.5rem;
             text-shadow: 0 2px 4px rgba(26, 54, 93, 0.1);
         }
         
         .hero-quote {
             font-size: 1.3rem;
-            /* color: var(--color-text-light); */
-            color: #ffffff;
+            color: var(--color-text-light);
             font-style: italic;
             margin-bottom: 2rem;
             line-height: 1.8;
@@ -318,41 +316,8 @@
 </head>
 
 <body>
-    
-
-    <section class="hero-section" style="position: relative;">
-        <div class="hero-bg"></div>
-        <img src="f1.jpg" alt="Fondo hermoso" style="width:100%; height:100%; object-fit:cover; position:absolute; left:0; top:0; z-index:0; opacity:0.65; pointer-events:none;">
-        <div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:1; pointer-events:none;
-            background: linear-gradient(180deg, rgba(26,54,93,0.85) 0%, rgba(248,246,240,0.3) 70%, rgba(248,246,240,0.9) 100%);
-            ">
-        </div>
-        <div class="hero-content" style="position:relative; z-index:2;">
-            <h1 class="hero-title serif">Conferencia Bahá'í</h1>
-            <h2 class="hero-subtitle serif" style="font-size: 1.8rem; margin-bottom: 1rem; color: #fbfdff;">Seminario Garrucha Región Sur - Octubre 2025</h2>
-            <blockquote class="hero-quote serif">
-                "La diversidad en la familia humana debería ser la causa de amor y armonía, 
-                como ocurre en la música donde muchas notas diferentes se mezclan juntas 
-                en perfectos acordes."
-            </blockquote>
-            <a href="#formulario" class="hero-button sans-serif">Inscribirse Ahora</a>
-        </div>
-        <div class="star-container" style="z-index:3;">
-            <svg class="nine-pointed-star" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
-                <path d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z" 
-                      fill="url(#goldGradient)" 
-                      stroke="var(--color-gold)" 
-                      stroke-width="2"/>
-                <defs>
-                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"></linearGradient>
-                        <stop offset="""0%" style="""stop-color:var(--color-gold);stop-opacity:1" />
-                        <stop offset="""100%" style="stop-color:var(--color-light-gold);stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
-    </section>
-        <!-- <div class="hero-content">
+    <section class="hero-section">
+        <div class="hero-content">
             <h1 class="hero-title serif">Conferencia Bahá'í</h1>
             <blockquote class="hero-quote serif">
                 "La diversidad en la familia humana debería ser la causa de amor y armonía, 
@@ -361,7 +326,7 @@
             </blockquote>
             <a href="#formulario" class="hero-button sans-serif">Inscribirse Ahora</a>
         </div>
-         -->
+        
         <div class="star-container">
             <svg class="nine-pointed-star" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z" 
@@ -381,19 +346,7 @@
     <section id="formulario" class="form-section">
         <div class="form-container">
             <h2 class="form-title serif">Formulario de Inscripción</h2>
-            <!-- Mensaje de bienvenida e instrucciones -->
-    <section class="intro-section" style="background: var(--color-white); padding: 2.5rem 1.5rem 1.5rem 1.5rem; border-radius: 0 0 30px 30px; box-shadow: 0 4px 24px rgba(26,54,93,0.07); max-width: 700px; margin: 2rem auto 0 auto;">
-        <h2 class="serif" style="color: var(--color-navy-blue); font-size: 2rem; margin-bottom: 1rem;">Seminario AELs Región Sur</h2>
-        <p style="font-size: 1.15rem; color: var(--color-text-dark); margin-bottom: 1rem;">
-            Para poder organizar el seminario con excelencia y que todos los participantes y acompañantes puedan disfrutar de la mejor manera posible os pedimos que rellenéis el siguiente formulario lo antes posible con toda la información que se pide y aquella que pueda ser de utilidad.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--color-text-light); margin-bottom: 1rem;">
-            Os recordamos que para que el centro donde se va a realizar el seminario pueda tener toda la información con tiempo suficiente os rogamos que podáis realizar la inscripción y el pago antes del <strong>30 de Mayo</strong>. Asimismo queríamos recordar que al realizar el pago, en el concepto, se debe indicar <strong>"Seminario AELs"</strong>. Una vez realizada la transferencia se ruega puedan enviar un comprobante a la tesorera del Consejo a través del siguiente email: <a href="mailto:shadi.cerpa@bahai.es" style="color: var(--color-navy-blue); text-decoration: underline;">shadi.cerpa@bahai.es</a>
-        </p>
-        <p style="font-size: 1.05rem; color: var(--color-text-light);">
-            Un cariñoso saludo
-        </p>
-    </section>
+            
             <form id="registrationForm">
                 <div class="form-group">
                     <label for="fullName" class="form-label">Nombre Completo *</label>
@@ -438,13 +391,7 @@
                     <textarea id="dietaryRestrictions" name="dietaryRestrictions" class="form-textarea" 
                                 placeholder="Indique cualquier alergia alimentaria, restricción dietética o preferencia especial (vegetariano, vegano, sin gluten, etc.)"></textarea>
                 </div>
-                <!-- Mensaje legal de protección de datos -->
-    <section class="legal-section" style="background: var(--color-white); padding: 2.5rem 1.5rem 1.5rem 1.5rem; border-radius: 0 0 30px 30px; box-shadow: 0 4px 24px rgba(26,54,93,0.07); max-width: 700px; margin: 2rem auto 0 auto;">
-        <h3 class="serif" style="color: var(--color-navy-blue); font-size: 1.2rem; margin-bottom: 0.7rem;">Protección de datos</h3>
-        <p style="font-size: 0.98rem; color: var(--color-text-light); line-height: 1.7;">
-            COMUNIDAD BAHAI DE España CIF/NIF R2800226I responsable del tratamiento informa, de conformidad con lo establecido en el REGLAMENTO (UE) 2016/679 y la Ley Orgánica 3/2018 de protección de datos, que sus datos de carácter personal son tratados con la finalidad de: Gestionar los datos de los miembros a efectos de la correcta administración de la organización y enviar información a los miembros sobre las actividades realizadas en la organización. Podrá ejercer sus derechos de acceso, rectificación, limitación de tratamiento, supresión, portabilidad y oposición al tratamiento de sus datos de carácter personal así como revocar los consentimientos que en su caso haya prestado u obtener más información, dirigiendo su petición a <a href="mailto:AEN.SECRETARIA@BAHAI.ES" style="color: var(--color-navy-blue); text-decoration: underline;">AEN.SECRETARIA@BAHAI.ES</a> / C/ MATÍAS TURRIÓN, 32, 28043, MADRID (MADRID).
-        </p>
-    </section>
+                
                 <div class="form-group">
                     <label for="contribution" class="form-label">Aportación (opcional)</label>
                     <input type="number" id="contribution" name="contribution" class="form-input" 
@@ -460,8 +407,6 @@
             </form>
         </div>
     </section>
-
-    
 
     <footer class="footer">
         <p class="footer-text">
