@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.favicon.cc/favicon/326/1003/favicon.ico" type="image/x-icon">
-    <title>Inscripción - Conferencia Enseñanza Conjunto SUR </title>
-    
+    <title>Inscripción - Conferencia Enseñanza Sureste </title>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
-        
+
         :root {
             --color-primary-cream: #f8f6f0;
             --color-secondary-beige: #e8e2d4;
@@ -22,13 +23,13 @@
             --color-text-dark: #2d3748;
             --color-text-light: #718096;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -36,15 +37,15 @@
             background: linear-gradient(135deg, var(--color-primary-cream) 0%, var(--color-secondary-beige) 100%);
             overflow-x: hidden;
         }
-        
+
         .serif {
             font-family: 'Crimson Text', serif;
         }
-        
+
         .sans-serif {
             font-family: 'Inter', sans-serif;
         }
-        
+
         .hero-section {
             min-height: 100vh;
             display: flex;
@@ -55,7 +56,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-content {
             max-width: 800px;
             z-index: 2;
@@ -63,7 +64,7 @@
             transform: translateY(30px);
             animation: fadeInUp 1.5s ease-out forwards;
         }
-        
+
         .hero-title {
             font-size: 3.5rem;
             font-weight: 600;
@@ -71,7 +72,7 @@
             margin-bottom: 1.5rem;
             text-shadow: 0 2px 4px rgba(26, 54, 93, 0.1);
         }
-        
+
         .hero-quote {
             font-size: 1.3rem;
             color: #ffffff;
@@ -79,7 +80,7 @@
             margin-bottom: 2rem;
             line-height: 1.8;
         }
-        
+
         .hero-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-light-gold) 100%);
@@ -92,12 +93,12 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
-        
+
         .hero-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
         }
-        
+
         .star-container {
             position: absolute;
             top: 20%;
@@ -105,14 +106,14 @@
             z-index: 1;
             opacity: 0.1;
         }
-        
+
         .nine-pointed-star {
             width: 200px;
             height: 200px;
             animation: gentleRotate 20s linear infinite;
             filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
         }
-        
+
         .form-section {
             padding: 4rem 2rem;
             background: var(--color-white);
@@ -122,31 +123,31 @@
             z-index: 3;
             box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .form-container {
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .form-title {
             font-size: 2.5rem;
             color: var(--color-navy-blue);
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .form-group {
             margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
         }
-        
+
         .form-group.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
@@ -154,7 +155,7 @@
             font-weight: 500;
             font-size: 1rem;
         }
-        
+
         .form-input,
         .form-select,
         .form-textarea {
@@ -166,7 +167,7 @@
             transition: all 0.3s ease;
             background: var(--color-gray-light);
         }
-        
+
         .form-input:focus,
         .form-select:focus,
         .form-textarea:focus {
@@ -175,30 +176,30 @@
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
             background: var(--color-white);
         }
-        
+
         .form-textarea {
             resize: vertical;
             min-height: 100px;
         }
-        
+
         .checkbox-group {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .custom-checkbox {
             position: relative;
             display: inline-block;
             width: 24px;
             height: 24px;
         }
-        
+
         .custom-checkbox input {
             opacity: 0;
             position: absolute;
         }
-        
+
         .checkmark {
             position: absolute;
             top: 0;
@@ -210,12 +211,12 @@
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
-        .custom-checkbox input:checked ~ .checkmark {
+
+        .custom-checkbox input:checked~.checkmark {
             background: var(--color-gold);
             border-color: var(--color-gold);
         }
-        
+
         .checkmark:after {
             content: "";
             position: absolute;
@@ -228,11 +229,11 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
-        
-        .custom-checkbox input:checked ~ .checkmark:after {
+
+        .custom-checkbox input:checked~.checkmark:after {
             display: block;
         }
-        
+
         .submit-button {
             width: 100%;
             background: linear-gradient(135deg, var(--color-navy-blue) 0%, var(--color-deep-navy) 100%);
@@ -246,18 +247,18 @@
             transition: all 0.3s ease;
             margin-top: 1rem;
         }
-        
+
         .submit-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(26, 54, 93, 0.3);
         }
-        
+
         .submit-button:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
-        
+
         .footer {
             background: var(--color-navy-blue);
             color: var(--color-white);
@@ -265,49 +266,51 @@
             padding: 2rem;
             margin-top: 3rem;
         }
-        
+
         .footer-text {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes gentleRotate {
             from {
                 transform: rotate(0deg);
             }
+
             to {
                 transform: rotate(360deg);
             }
         }
-        
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-quote {
                 font-size: 1.1rem;
             }
-            
+
             .star-container {
                 display: none;
             }
-            
+
             .form-title {
                 font-size: 2rem;
             }
-            
+
             .form-section {
                 padding: 2rem 1rem;
             }
@@ -316,106 +319,110 @@
 </head>
 
 <body>
-    
+
 
     <section class="hero-section" style="position: relative;">
         <div class="hero-bg"></div>
-        <img src="f1.jpg" alt="Fondo hermoso" style="width:100%; height:100%; object-fit:cover; position:absolute; left:0; top:0; z-index:0; opacity:0.65; pointer-events:none;">
+        <img src="f1.jpg" alt="Fondo hermoso"
+            style="width:100%; height:100%; object-fit:cover; position:absolute; left:0; top:0; z-index:0; opacity:0.65; pointer-events:none;">
         <div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:1; pointer-events:none;
             background: linear-gradient(180deg, rgba(26,54,93,0.85) 0%, rgba(248,246,240,0.3) 70%, rgba(248,246,240,0.9) 100%);
             ">
         </div>
         <div class="hero-content" style="position:relative; z-index:2;">
-            <h1 class="hero-title serif">Conferencia Conferencia Enseñanza </h1>
-            <h2 class="hero-subtitle serif" style="font-size: 1.8rem; margin-bottom: 1rem; color: #fbfdff;">Seminario Garrucha Región Sur - 4 Octubre 2025</h2>
+            <h1 class="hero-title serif">Conferencia Enseñanza </h1>
+            <h2 class="hero-subtitle serif" style="font-size: 1.8rem; margin-bottom: 1rem; color: #fbfdff;">Conjunto
+                Sureste - 4 Octubre 2025</h2>
             <blockquote class="hero-quote serif">
-                "La diversidad en la familia humana debería ser la causa de amor y armonía, 
-                como ocurre en la música donde muchas notas diferentes se mezclan juntas 
+                "La diversidad en la familia humana debería ser la causa de amor y armonía,
+                como ocurre en la música donde muchas notas diferentes se mezclan juntas
                 en perfectos acordes."
             </blockquote>
             <a href="#formulario" class="hero-button sans-serif">Inscribirse Ahora</a>
         </div>
         <div class="star-container" style="z-index:3;">
             <svg class="nine-pointed-star" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
-                <path d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z" 
-                      fill="url(#goldGradient)" 
-                      stroke="var(--color-gold)" 
-                      stroke-width="2"/>
-                <defs>
-                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"></linearGradient>
-                        <stop offset="0%" style="stop-color:var(--color-gold);stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:var(--color-light-gold);stop-opacity:1" />
-                    </linearGradient>
-                </defs>
+            <path
+                d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z"
+                fill="url(#goldGradient)" stroke="var(--color-gold)" stroke-width="2" />
+            <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"></linearGradient>
+                <stop offset="0%" style="stop-color:var(--color-gold);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:var(--color-light-gold);stop-opacity:1" />
+                </linearGradient>
+            </defs>
             </svg>
         </div>
     </section>
 
-        <div class="star-container">
-            <svg class="nine-pointed-star" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z" 
-                      fill="url(#goldGradient)" 
-                      stroke="var(--color-gold)" 
-                      stroke-width="2"/>
-                <defs>
-                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:var(--color-gold);stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:var(--color-light-gold);stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
+    <div class="star-container">
+        <svg class="nine-pointed-star" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M100 10 L110 50 L150 30 L120 60 L160 80 L120 90 L140 130 L100 110 L90 150 L80 110 L40 130 L70 90 L30 70 L70 60 L40 20 L80 40 Z"
+                fill="url(#goldGradient)" stroke="var(--color-gold)" stroke-width="2" />
+            <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:var(--color-gold);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--color-light-gold);stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
     </section>
 
     <section id="formulario" class="form-section">
         <div class="form-container">
             <h2 class="form-title serif">Formulario de Inscripción</h2>
-            </div>
-            <!-- Mensaje de bienvenida e instrucciones -->
-    <section class="intro-section" style="background: var(--color-white); padding: 2.5rem 1.5rem 1.5rem 1.5rem; border-radius: 0 0 30px 30px; box-shadow: 0 4px 24px rgba(26,54,93,0.07); max-width: 700px; margin: 2rem auto 0 auto;">
-        <h2 class="serif" style="color: var(--color-navy-blue); font-size: 2rem; margin-bottom: 1rem;">
-        Conferencia Enseñanza SUR - 4 Octubre 2025
-        </h2>
-        <p style="font-size: 1.15rem; color: var(--color-text-dark); margin-bottom: 1rem;">
-            Para poder organizar el seminario con excelencia y que todos los participantes y acompañantes puedan disfrutar de la mejor manera posible os pedimos que rellenéis el siguiente formulario lo antes posible con toda la información que se pide y aquella que pueda ser de utilidad.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--color-text-light); margin-bottom: 1rem;">
-            Os recordamos que para que el centro donde se va a realizar el seminario pueda tener toda la información con tiempo suficiente os rogamos que podáis realizar la inscripción y el pago antes del <strong>30 de Septiembre </strong>. Asimismo queríamos recordar que al realizar el pago, en el concepto, se debe indicar <strong>"Conferencia Bahá'í"</strong>. Una vez realizada la transferencia puede enviar un comprobante a la tesorera del Consejo a través del siguiente email: 
-            consejo 
-        </p>
-        <!-- <a href="mailto:shadi.cerpa@bahai.es" style="color: var(--color-navy-blue); text-decoration: underline;">shadi.cerpa@bahai.es</a> -->
-        <p style="font-size: 1.05rem; color: var(--color-text-light);">
-            Un cariñoso saludo
-        </p>
-    </section>
+        </div>
+        <!-- Mensaje de bienvenida e instrucciones -->
+        <section class="intro-section"
+            style="background: var(--color-white); padding: 2.5rem 1.5rem 1.5rem 1.5rem; border-radius: 0 0 30px 30px; box-shadow: 0 4px 24px rgba(26,54,93,0.07); max-width: 700px; margin: 2rem auto 0 auto;">
+            <h2 class="serif" style="color: var(--color-navy-blue); font-size: 2rem; margin-bottom: 1rem;">
+
+            </h2>
+            <p style="font-size: 1.15rem; color: var(--color-text-dark); margin-bottom: 1rem;">
+                Para poder organizar el seminario con excelencia y que todos los participantes y acompañantes puedan
+                disfrutar de la mejor manera posible os pedimos que rellenéis el siguiente formulario lo antes posible.
+            </p>
+            <p style="font-size: 1.05rem; color: var(--color-text-dark); margin-bottom: 1rem;">
+                Os recordamos que para que el centro donde se va a realizar el seminario pueda tener toda la información
+                con tiempo suficiente, podáis realizar la inscripción y el pago antes del <strong>30 de Septiembre
+                </strong>. Asimismo queríamos recordar que al realizar el pago, en el concepto, se debe indicar
+                <strong>"aportacion"</strong>. Una vez realizada la transferencia por favor enviar un comprobante a la
+                tesorera del Consejo, Shadi Cerpa al siguiente email: <a href="mailto:consejosur@bahai.es"
+                    style="color: var(--color-navy-blue); text-decoration: underline;">consejosur@bahai.es</a>
+
+            </p>
+            <p style="font-size: 1.05rem; color: var(--color-text-dark);">
+                Un cariñoso saludo
+            </p>
+        </section>
         <div class="form-container" style="margin-top: 2rem;">
             <form id="registrationForm">
                 <div class="form-group">
                     <label for="fullName" class="form-label">Nombre Completo *</label>
                     <input type="text" id="fullName" name="fullName" class="form-input" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email" class="form-label">Correo Electrónico *</label>
                     <input type="email" id="email" name="email" class="form-input" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="conference" class="form-label">Conferencia a la que asistirá *</label>
                     <select id="conference" name="conference" class="form-select" required>
                         <option value="">Seleccione una conferencia</option>
-                        <option value="Lugar - Sevilla ">Lugar - Sevilla </option>
-                        <option value="Lugar - Málaga">Lugar - Málaga</option>
                         <option value="Lugar - Garrucha">Lugar - Garrucha</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="companions" class="form-label">¿Viene acompañado? (Niños/Parejas)</label>
-                    <textarea id="companions" name="companions" class="form-textarea" 
-                                placeholder="Indique si viene con niños, pareja u otros acompañantes. Incluya nombres y edades si es relevante."></textarea>
+                    <textarea id="companions" name="companions" class="form-textarea"
+                        placeholder="Indique si viene con niños, pareja u otros acompañantes. Incluya nombres y edades si es relevante."></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <div class="checkbox-group">
                         <label class="custom-checkbox">
@@ -427,29 +434,56 @@
                         </label>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="dietaryRestrictions" class="form-label">Alergias alimentarias o dietas especiales</label>
-                    <textarea id="dietaryRestrictions" name="dietaryRestrictions" class="form-textarea" 
-                                placeholder="Indique cualquier alergia alimentaria, restricción dietética o preferencia especial (vegetariano, vegano, sin gluten, etc.)"></textarea>
+                    <label for="dietaryRestrictions" class="form-label">Alergias alimentarias o dietas
+                        especiales</label>
+                    <textarea id="dietaryRestrictions" name="dietaryRestrictions" class="form-textarea"
+                        placeholder="Indique cualquier alergia alimentaria, restricción dietética o preferencia especial (vegetariano, vegano, sin gluten, etc.)"></textarea>
                 </div>
                 <!-- Mensaje legal de protección de datos -->
-    <section class="legal-section" style="background: var(--color-white); padding: 2.5rem 1.5rem 1.5rem 1.5rem; border-radius: 0 0 30px 30px; box-shadow: 0 4px 24px rgba(26,54,93,0.07); max-width: 700px; margin: 2rem auto 0 auto;">
-        <h3 class="serif" style="color: var(--color-navy-blue); font-size: 1.2rem; margin-bottom: 0.7rem;">Protección de datos</h3>
-        <p style="font-size: 0.98rem; color: var(--color-text-light); line-height: 1.7;">
-            COMUNIDAD BAHAI DE España CIF/NIF R2800226I responsable del tratamiento informa, de conformidad con lo establecido en el REGLAMENTO (UE) 2016/679 y la Ley Orgánica 3/2018 de protección de datos, que sus datos de carácter personal son tratados con la finalidad de: Gestionar los datos de los miembros a efectos de la correcta administración de la organización y enviar información a los miembros sobre las actividades realizadas en la organización. Podrá ejercer sus derechos de acceso, rectificación, limitación de tratamiento, supresión, portabilidad y oposición al tratamiento de sus datos de carácter personal así como revocar los consentimientos que en su caso haya prestado u obtener más información, dirigiendo su petición a <a href="mailto:AEN.SECRETARIA@BAHAI.ES" style="color: var(--color-navy-blue); text-decoration: underline;">AEN.SECRETARIA@BAHAI.ES</a> / C/ MATÍAS TURRIÓN, 32, 28043, MADRID (MADRID).
-        </p>
-    </section>
+                <section class="legal-section"
+                    style="background: var(--color-white); padding: 2.5rem 1.5rem 1.5rem 1.5rem; border-radius: 0 0 30px 30px; box-shadow: 0 4px 24px rgba(26,54,93,0.07); max-width: 700px; margin: 2rem auto 0 auto; margin-bottom: 25px;">
+                    <h3 class="serif" style="color: var(--color-navy-blue); font-size: 1.2rem; margin-bottom: 0.7rem;">
+                        Protección de datos</h3>
+                    <p style="font-size: 0.98rem; color: var(--color-text-light); line-height: 1.7;">
+                        COMUNIDAD BAHAI DE España CIF/NIF R2800226I responsable del tratamiento informa, de conformidad
+                        con lo establecido en el REGLAMENTO (UE) 2016/679 y la Ley Orgánica 3/2018 de protección de
+                        datos, que sus datos de carácter personal son tratados con la finalidad de: Gestionar los datos
+                        de los miembros a efectos de la correcta administración de la organización y enviar información
+                        a los miembros sobre las actividades realizadas en la organización. Podrá ejercer sus derechos
+                        de acceso, rectificación, limitación de tratamiento, supresión, portabilidad y oposición al
+                        tratamiento de sus datos de carácter personal así como revocar los consentimientos que en su
+                        caso haya prestado u obtener más información, dirigiendo su petición a <a
+                            href="mailto:AEN.SECRETARIA@BAHAI.ES"
+                            style="color: var(--color-navy-blue); text-decoration: underline;">AEN.SECRETARIA@BAHAI.ES</a>
+                        / C/ MATÍAS TURRIÓN, 32, 28043, MADRID (MADRID).
+                    </p>
+                    <br>
+                    <br>
+
+                    <p>
+                        <span class="text-decoration: underline"> Datos bancarios: </span>
+                    </p>
+                    <br>
+                    <p style="font-size: 0.98rem; color: var(--color-text-light); line-height: 1.7;">
+                        Comunidad Bahá'i de España
+                    </p>
+                    <br>
+                    <p style="font-size: 0.98rem; color: var(--color-text-light); line-height: 1.7;">
+                        Número de cuenta: ES81 0182 0741 8502 0158 7627
+                    </p>
+                </section>
 
                 <div class="form-group">
                     <label for="contribution" class="form-label">Aportación (opcional)</label>
-                    <input type="number" id="contribution" name="contribution" class="form-input" 
-                                min="0" step="0.01" placeholder="0.00">
+                    <input type="number" id="contribution" name="contribution" class="form-input" min="0" step="0.01"
+                        placeholder="0.00">
                     <small style="color: var(--color-text-light); display: block; margin-top: 0.5rem;">
                         Su aportación voluntaria ayuda a cubrir los gastos del evento.
                     </small>
                 </div>
-                
+
                 <button type="submit" class="submit-button">
                     Enviar Inscripción
                 </button>
@@ -457,7 +491,7 @@
         </div>
     </section>
 
-    
+
 
     <footer class="footer">
         <p class="footer-text">
@@ -467,11 +501,11 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('registrationForm');
             const submitButton = form.querySelector('.submit-button');
-            
-            form.addEventListener('submit', async function(e) {
+
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
 
                 if (!validateForm()) {
@@ -487,13 +521,13 @@
 
                 submitButton.disabled = true;
                 submitButton.textContent = 'Enviando...';
-                
+
                 const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxET-TxFN1L_OhmvSLkePnBr022252xfU1imrr83vAdvPOl0RxQGplo3PeTef8MF2Edxg/exec';
 
                 try {
                     // *** ESTA ES LA URL QUE DEBES REEMPLAZAR ***
                     // Cambia 'TU_URL_DE_APPS_SCRIPT' por la URL que obtuviste de Google Apps Script.
-                    const response = await  fetch(GOOGLE_APPS_SCRIPT_URL + '?' + queryString, {
+                    const response = await fetch(GOOGLE_APPS_SCRIPT_URL + '?' + queryString, {
                         method: 'GET'
                     });
 
@@ -517,7 +551,7 @@
             function validateForm() {
                 const requiredFields = ['fullName', 'email', 'conference'];
                 let isValid = true;
-                
+
                 requiredFields.forEach(fieldName => {
                     const field = document.getElementById(fieldName);
                     if (!field.value.trim()) {
@@ -527,17 +561,17 @@
                         clearFieldError(field);
                     }
                 });
-                
+
                 const email = document.getElementById('email');
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (email.value && !emailRegex.test(email.value)) {
                     showFieldError(email, 'Ingrese un email válido');
                     isValid = false;
                 }
-                
+
                 return isValid;
             }
-            
+
             function showFieldError(field, message) {
                 clearFieldError(field);
                 field.style.borderColor = '#e53e3e';
@@ -547,7 +581,7 @@
                 errorDiv.textContent = message;
                 field.parentNode.appendChild(errorDiv);
             }
-            
+
             function clearFieldError(field) {
                 field.style.borderColor = '';
                 const existingError = field.parentNode.querySelector('.field-error');
@@ -555,12 +589,12 @@
                     existingError.remove();
                 }
             }
-            
+
             function showToast(message, type) {
                 const toastDiv = document.createElement('div');
                 let bgColor = type === 'success' ? '#d4af37' : '#e53e3e';
                 let textColor = type === 'success' ? '#1a365d' : 'white';
-                
+
                 toastDiv.style.cssText = `
                     position: fixed;
                     bottom: 20px;
@@ -578,12 +612,12 @@
                 `;
                 toastDiv.textContent = message;
                 document.body.appendChild(toastDiv);
-                
+
                 setTimeout(() => {
                     toastDiv.remove();
                 }, 5000);
             }
-            
+
             function clearAllErrors() {
                 form.querySelectorAll('.field-error').forEach(error => error.remove());
                 form.querySelectorAll('input, select, textarea').forEach(field => {
@@ -601,12 +635,12 @@
                 }
             `;
             document.head.appendChild(style);
-            
+
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
-            const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
@@ -616,8 +650,8 @@
             document.querySelectorAll('.form-group').forEach(group => {
                 observer.observe(group);
             });
-            
-            document.querySelector('.hero-button').addEventListener('click', function(e) {
+
+            document.querySelector('.hero-button').addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector('#formulario').scrollIntoView({
                     behavior: 'smooth',
@@ -627,4 +661,5 @@
         });
     </script>
 </body>
+
 </html>
